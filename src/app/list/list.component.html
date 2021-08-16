@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="row bg-dark justify-content-center
+            align-items-center" style="height:80px">
+        <div class="col-3"></div>
+        <div class="col-6 text-light h2">
+            List
+        </div>
+    </div>
+
+
+    <div class="todos row g-3">
+        <form (submit)="addToList()">
+            <div class="mb-3">
+                <input type="text" class="form-control" name="firstName" value="" placeholder="Enter first name"  [(ngModel)]="firstName"><br>
+            </div>
+
+            <div class="mb-3">
+            <input type="text" class="form-control" name="firstName" value="" placeholder="Enter last name"  [(ngModel)]="lastName"><br>
+            </div>
+
+            <div class="mb-3">
+                <input type="text" class="form-control" name="firstName" value="" placeholder="Enter phone"  [(ngModel)]="phone"><br>
+            </div>
+
+            <div class="mb-3">
+                <input type="text" class="form-control" name="firstName" value="" placeholder="Enter address"  [(ngModel)]="address"><br>
+            </div>
+
+            <div class="mb-3">
+            <input type="submit" value="Add Person" class="btn btn-primary">
+            </div>
+            
+        </form>
+
+
+  
+
+    </div>
+    <div class="listing">
+    <!--Tasks added repeated divisions-->
+    <div class="dets bg-dark" *ngFor="let x of items; let index = index;" >
+
+        
+
+        
+
+            <div class="info h6 text-light">{{x.firstName}}</div>
+            <div class="info h6 text-light">{{x.lastName}}</div>
+            <div class="info h6 text-light">{{x.phone}}</div>
+            <div class="info h6 text-light">{{x.address}}</div>
+            
+
+
+        
+        
+     
+        
+        
+            <input (click)="deleteTask(index)" type="button" value="Delete" class="btn btn-danger">
+        </div>
+        </div>
+
+    
+</div>
